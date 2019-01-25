@@ -2,8 +2,16 @@ module Renoval
   module Validators
     # Base class for all the validators
     class Base
-      def validate_type_line(_filename, _content)
-        raise NotImplementedError
+      def validate(filename)
+      end
+
+      def validate_type_line(filename, ticket_line)
+        errors = []
+
+        ticket_id = extract_ticket_id(filename)
+        errors << 'Ticket definition line does not have the right format' unless ticket_line =~ /#{ticket_line_regex(ticket_id)}/
+
+        errors
       end
 
       private
