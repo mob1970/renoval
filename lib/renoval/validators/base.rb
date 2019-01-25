@@ -9,7 +9,7 @@ module Renoval
       private
 
       def ticket_line_regex(ticket_id)
-        "#{validator_type}:" + '\"\[' + ticket_id + '\]\(https:\/\/jira.sage.com\/browse\/' + ticket_id + '\) - .+\"'
+        "#{validator_type}: " + '\"\[' + ticket_id + '\]\(https:\/\/jira.sage.com\/browse\/' + ticket_id + '\) - .+\"'
       end
 
       def extract_ticket_id(filename)

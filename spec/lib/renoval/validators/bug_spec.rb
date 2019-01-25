@@ -25,7 +25,6 @@ describe Renoval::Validators::Bug do
 
       it 'must return the right error' do
         errors = subject.validate_type_line('AC-1111.yml', line)
-        require 'pry' ; binding.pry
         expect(errors.length).to eq(0)
       end
     end
